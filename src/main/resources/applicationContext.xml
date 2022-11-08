@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:application.properties"/>
+    <bean id = "myAnimal"
+          class="org.peaksoft.Dog">
+        <property name="breed" value="${dog.breed}"/>
+        <property name="color" value="${dog.color}"/>
+        <property name="age" value="${dog.age}"/>
+    </bean>
+
+    <bean id = "person"
+          class="org.peaksoft.Person">
+        <property name="animal" ref="myAnimal"/>
+        <property name="name" value="${person.name}"/>
+        <property name="age" value="${person.age}"/>
+
+</bean>
+
+
+    <bean id = "myAnimal1"
+          class="org.peaksoft.Cat">
+        <property name="breed" value="${cat.breed}"/>
+        <property name="color" value="${cat.color}"/>
+        <property name="age" value="${cat.age}"/>
+    </bean>
+
+    <bean id = "person1"
+          class="org.peaksoft.Person">
+        <property name="animal" ref="myAnimal1"/>
+        <property name="name" value="${person.name1}"/>
+        <property name="age" value="${person.age1}"/>
+
+    </bean>
+
+    <bean id = "myAnimal2"
+          class="org.peaksoft.Sheep">
+        <property name="breed" value="${sheep.breed}"/>
+        <property name="color" value="${sheep.color}"/>
+        <property name="age" value="${sheep.age}"/>
+    </bean>
+
+    <bean id = "person2"
+          class="org.peaksoft.Person">
+        <property name="animal" ref="myAnimal2"/>
+        <property name="name" value="${person.name2}"/>
+        <property name="age" value="${person.age2}"/>
+
+    </bean>
+
+</beans>
